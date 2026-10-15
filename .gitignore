@@ -1,0 +1,22 @@
+# Artefatos de execucao: contem SEUS ids de sessao e SEUS valores de gasto.
+# Nunca devem entrar no repositorio.
+costs.json
+price-cache.json
+
+# O bundle do cliente e GERADO (scripts/build-bundle.mjs) e carrega uma semente
+# de custo — que tambem e dado pessoal. Versionamos uma versao com semente
+# vazia; a sua local e regenerada pelo instalador.
+# lib/client.js
+
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.swp

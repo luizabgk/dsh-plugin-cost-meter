@@ -1,0 +1,36 @@
+{
+  "source": "embedded-defaults",
+  "url": "https://api-docs.deepseek.com/quick_start/pricing",
+  "fetchedAt": "2026-10-27T00:00:00.000Z",
+  "note": "Valores de fallback, em USD por 1M tokens, transcritos da tabela oficial. O plugin sobrescreve este arquivo com o cache ao conseguir baixar a pagina.",
+  "models": {
+    "deepseek-flash": {
+      "label": "DeepSeek-V4.1-Flash",
+      "cacheHit": { "offPeak": 0.003, "peak": 0.006 },
+      "cacheMiss": { "offPeak": 0.15, "peak": 0.3 },
+      "output": { "offPeak": 0.6, "peak": 1.2 }
+    },
+    "deepseek-v4-pro": {
+      "label": "DeepSeek-V4-Pro",
+      "cacheHit": { "offPeak": 0.022, "peak": 0.044 },
+      "cacheMiss": { "offPeak": 0.66, "peak": 1.32 },
+      "output": { "offPeak": 1.98, "peak": 3.96 }
+    }
+  },
+  "labels": {
+    "deepseek-flash": "DeepSeek-V4.1-Flash",
+    "deepseek-v4-pro": "DeepSeek-V4-Pro"
+  },
+  "routingAliases": {
+    "deepseek-v4-flash": "deepseek-flash",
+    "deepseek-v4-flash-vision-exp": "deepseek-flash",
+    "deepseek-chat": "deepseek-flash",
+    "deepseek-reasoner": "deepseek-flash",
+    "V4-Flash-Vision-Exp": "deepseek-flash",
+    "V4-Flash": "deepseek-flash",
+    "V4.1-Flash": "deepseek-flash",
+    "DeepSeek-V4.1-Flash": "deepseek-flash",
+    "V4-Pro": "deepseek-v4-pro",
+    "DeepSeek-V4-Pro": "deepseek-v4-pro"
+  }
+}

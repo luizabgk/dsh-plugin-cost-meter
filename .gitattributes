@@ -1,0 +1,4 @@
+# Normaliza fim de linha no repositorio: LF para todo mundo, independente do SO
+# de quem clonar. Sem isto, o Windows grava CRLF e o diff aparece inteiro
+# modificado em qualquer clone Linux/macOS.
+* text=auto eol=lf

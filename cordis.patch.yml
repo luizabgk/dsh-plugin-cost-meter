@@ -1,0 +1,8 @@
+# Camada de patch do bundle cost-meter: UMA linha inserida na arvore do perfil.
+#
+# O host carrega este pacote para servir o bundle `./client` ao browser; o
+# trabalho de custo roda no cliente, e a atualizacao da tabela de precos roda
+# aqui no host.
+- insert:
+    - id: cost-meter
+      name: dsh-plugin-cost-meter

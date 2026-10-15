@@ -1,0 +1,68 @@
+{
+  "name": "dsh-plugin-cost-meter",
+  "version": "1.0.0",
+  "description": "Mostra o custo estimado em US$ (mes corrente + sessao atual) ao lado do nome do modelo na GUI do DeepSeek Harness",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./pricing.mjs": "./lib/pricing.mjs",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "immediately": true,
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/",
+    "scripts/",
+    "cordis.patch.yml",
+    "price-defaults.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-bundle.mjs --empty",
+    "test": "node scripts/test-badge.mjs && node scripts/test-aggregate.mjs",
+    "check:pricing": "node scripts/check-pricing.mjs",
+    "check:costs": "node scripts/check-costs.mjs"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cost",
+    "usd",
+    "tokens",
+    "pricing",
+    "observability"
+  ],
+  "author": "luizabgk (https://github.com/luizabgk)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizabgk/dsh-plugin-cost-meter.git"
+  },
+  "engines": {
+    "node": ">=22.15.0",
+    "dsh": ">=0.1.5-rc.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
