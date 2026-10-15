@@ -1,0 +1,29 @@
+# Roda a suite de testes a cada push e a cada pull request.
+#
+# O pacote tem zero dependencias, entao nao existe passo de instalacao: basta
+# Node e `npm test`. As duas plataformas entram na matriz porque a parte mais
+# sensivel do plugin e a descompressao multi-frame de zstd, que e justamente
+# onde diferenca de plataforma costuma aparecer.
+name: testes
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Testes (cliente + agregacao)
+        run: npm test
+      - name: O bundle e gerado sem dados pessoais
+        run: npm run build
