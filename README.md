@@ -6,7 +6,7 @@ Mostra, **ao lado do nome do modelo** no composer da GUI do
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), quanto o
 modelo já custou:
 
-![Badge de custo ao lado do seletor de modelo](docs/badge.png)
+![Badge de custo ao lado do seletor de modelo](docs/badge.gif)
 
 - **no mês** — gasto estimado daquele modelo no mês corrente (UTC), zerando
   sozinho na virada do mês;
@@ -147,7 +147,7 @@ nova só aparece depois de reiniciá-lo.
 | `npm test` | roda as duas suítes: contrato/render do cliente e agregação do host |
 | `npm run check:pricing` | baixa a página oficial e confere o parser contra os preços embutidos |
 | `npm run check:costs` | agrega os logs desta máquina e imprime os números |
-| `node scripts/capture-screenshot.mjs <url> [saida.png]` | regenera a imagem do README — neutraliza os valores antes de capturar |
+| `node scripts/capture-screenshot.mjs <url> [saida] [--gif]` | regenera a imagem do README (PNG ou GIF animado) — neutraliza os valores antes de cada captura. O GIF precisa do `sharp` (o DSH já traz um emprestado). |
 
 `npm test` não precisa de navegador. Os dois diagnósticos que **precisam** usam um
 Chromium headless (`probe-browser.mjs`, `inspect-dom.mjs`); eles procuram o
